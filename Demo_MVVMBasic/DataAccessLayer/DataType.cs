@@ -8,8 +8,6 @@ namespace Demo_MVVMBasic.DataAccessLayer
 {
     public enum DataType
     {
-        XML,
-        JSON,
         MONGODB
     }
 }

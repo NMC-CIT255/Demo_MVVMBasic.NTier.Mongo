@@ -10,7 +10,7 @@ namespace Demo_MVVMBasic.BusinessLayer
 {
     /// <summary>
     /// Repository for CRUD
-    /// Note: the _dataService object is instantiated with either the XML or Json class based on the value set in the DataConfig class
+    /// Note: the _dataService object is instantiated with DataConfig class
     /// </summary>
     class WidgetRepository : IWidgetRepository, IDisposable
     {
@@ -18,7 +18,7 @@ namespace Demo_MVVMBasic.BusinessLayer
         List<Widget> _widgets;
 
         /// <summary>
-        /// set the correct data service (XML or Json) data service and read in a list of all widgets
+        /// set the correct data service and read in a list of all widgets
         /// </summary>
         public WidgetRepository()
         {
