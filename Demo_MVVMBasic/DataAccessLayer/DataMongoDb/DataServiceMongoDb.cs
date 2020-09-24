@@ -16,24 +16,7 @@ namespace Demo_MVVMBasic.DataAccessLayer
 
         public DataServiceMongoDb()
         {
-            //
-            // call the method below to initialize the MongoDb collection
-            //
-            // WriteSeedData();
-
             Connection();
-        }
-
-        private void WriteSeedData()
-        {
-            try
-            {
-                MongoDbUtilities.WriteSeedDataToDatabase();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
         private bool Connection()
@@ -63,6 +46,7 @@ namespace Demo_MVVMBasic.DataAccessLayer
         {
             _collection.InsertOne(widget);
         }
+
 
         public void Delete(string name)
         {
