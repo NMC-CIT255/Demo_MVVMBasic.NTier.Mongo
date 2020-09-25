@@ -6,6 +6,9 @@ using System.Windows.Input;
 
 namespace Demo_MVVMBasic
 {
+    /// <summary>
+    /// implements the ICommand to simplify the view model code
+    /// </summary>
     class RelayCommand : ICommand
     {
         private Action<object> _action;

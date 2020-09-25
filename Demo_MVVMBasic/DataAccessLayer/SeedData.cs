@@ -14,6 +14,7 @@ namespace Demo_MVVMBasic.DataAccessLayer
             {
                 new Widget()
                 {
+                    Id = 1,
                     Name = "Furry",
                     Color = "Red",
                     UnitPrice = 4.95,
@@ -22,6 +23,7 @@ namespace Demo_MVVMBasic.DataAccessLayer
 
                 new Widget()
                 {
+                    Id = 2,
                     Name = "Woody",
                     Color = "Brown",
                     UnitPrice = 6.95,
@@ -30,6 +32,7 @@ namespace Demo_MVVMBasic.DataAccessLayer
 
                 new Widget()
                 {
+                    Id = 3,
                     Name = "Rubbery",
                     Color = "Black",
                     UnitPrice = 3.95,
@@ -38,6 +41,7 @@ namespace Demo_MVVMBasic.DataAccessLayer
 
                 new Widget()
                 {
+                    Id = 4,
                     Name = "Glassy",
                     Color = "Clear",
                     UnitPrice = 9.95,

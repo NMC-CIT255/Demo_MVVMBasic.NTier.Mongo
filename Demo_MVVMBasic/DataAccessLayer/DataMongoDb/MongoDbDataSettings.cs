@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Demo_MVVMBasic.DataAccessLayer.DataMongoDb
 {
+    /// <summary>
+    /// Database configurations: user name, password, database name, collection name, connection string
+    /// </summary>
     public static class MongoDbDataSettings
     {
         private static string userName = "johnvelis";

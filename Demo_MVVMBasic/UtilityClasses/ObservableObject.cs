@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Demo_MVVMBasic
 {
+    /// <summary>
+    /// implements the INotifyPropertyChanged to simplify the view model code
+    /// </summary>
     public abstract class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

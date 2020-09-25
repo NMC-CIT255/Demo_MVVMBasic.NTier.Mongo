@@ -1,5 +1,6 @@
 ﻿
 using Demo_MVVMBasic.DataAccessLayer;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,9 +51,9 @@ namespace Demo_MVVMBasic.BusinessLayer
         /// </summary>
         /// <param name="name">widget name</param>
         /// <returns></returns>
-        public Widget GetById(string name)
+        public Widget GetById(int id)
         {
-            return _widgets.FirstOrDefault(w => w.Name == name);
+            return _widgets.FirstOrDefault(w => w.Id == id);
         }
 
         /// <summary>
@@ -65,8 +66,9 @@ namespace Demo_MVVMBasic.BusinessLayer
             {
                 _dataService.Add(widget);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                string message = e.Message;
                 throw;
             }
         }
@@ -74,15 +76,16 @@ namespace Demo_MVVMBasic.BusinessLayer
         /// <summary>
         /// delete a widget
         /// </summary>
-        /// <param name="name">widget id</param>
-        public void Delete(string name)
+        /// <param name="id">widget id</param>
+        public void Delete(int id)
         {
             try
             {
-                _dataService.Delete(name);
+                _dataService.Delete(id);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                string message = e.Message;
                 throw;
             }
         }
@@ -97,8 +100,9 @@ namespace Demo_MVVMBasic.BusinessLayer
             {
                 _dataService.Update(widget);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                string message = e.Message;
                 throw;
             }
         }

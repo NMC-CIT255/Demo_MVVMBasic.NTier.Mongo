@@ -15,8 +15,8 @@ namespace Demo_MVVMBasic
         private double _unitPrice;
         private int _currentInventory;
 
-        // Id property for MongoDb objects
-        public ObjectId Id { get; set; }
+        // Id property replaces the ObjectId Id for MongoDb collection elements
+        public int Id { get; set; }
 
         public string Name
         {
@@ -54,6 +54,7 @@ namespace Demo_MVVMBasic
         {
             return new Widget()
             {
+                Id = Id,
                 Name = _name,
                 Color = _color,
                 UnitPrice = _unitPrice,

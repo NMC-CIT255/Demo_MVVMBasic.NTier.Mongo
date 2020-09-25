@@ -14,6 +14,10 @@ namespace Demo_MVVMBasic.DataAccessLayer
     {
         private static MongoClient _client;
         
+        /// <summary>
+        /// test for connection to online MongoDb 
+        /// </summary>
+        /// <returns>true if connected</returns>
         public static bool Connection()
         {
             try
@@ -28,6 +32,10 @@ namespace Demo_MVVMBasic.DataAccessLayer
             }
         }
 
+        /// <summary>
+        /// write seed data to online MongoDb database/collection
+        /// </summary>
+        /// <returns>true of seed data added successfully</returns>
         public static bool WriteSeedDataToDatabase()
         {
             if (Connection())

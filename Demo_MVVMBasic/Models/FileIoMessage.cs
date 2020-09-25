@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Demo_MVVMBasic
 {
+    /// <summary>
+    /// file I/O status codes
+    /// </summary>
     public enum FileIoMessage
     {
         None,

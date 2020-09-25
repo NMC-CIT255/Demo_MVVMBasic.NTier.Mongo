@@ -1,4 +1,5 @@
 ﻿using Demo_MVVMBasic.DataAccessLayer;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace Demo_MVVMBasic.BusinessLayer
         /// retrieve a widget using the repository
         /// </summary>
         /// <returns>widget</returns>
-        private Widget GetWidget(string id)
+        private Widget GetWidget(int id)
         {
             Widget widget = null;
             FileIoStatus = FileIoMessage.None;
@@ -106,7 +107,7 @@ namespace Demo_MVVMBasic.BusinessLayer
         /// </summary>
         /// <param name="id">widget id</param>
         /// <returns>widget</returns>
-        public Widget WidgetById(string id)
+        public Widget WidgetById(int id)
         {
             return GetWidget(id);
         }
@@ -136,10 +137,38 @@ namespace Demo_MVVMBasic.BusinessLayer
         }
 
         /// <summary>
+        /// update a widget
+        /// </summary>
+        /// <param name="updatedWidget">updated widget</param>
+        public void UpdateWidget(Widget updatedWidget)
+        {
+            try
+            {
+                if (GetWidget(updatedWidget.Id) != null)
+                {
+                    using (WidgetRepository repo = new WidgetRepository())
+                    {
+                        repo.Update(updatedWidget);
+                    }
+
+                    FileIoStatus = FileIoMessage.Complete;
+                }
+                else
+                {
+                    FileIoStatus = FileIoMessage.RecordNotFound;
+                }
+            }
+            catch (Exception)
+            {
+                FileIoStatus = FileIoMessage.FileAccessError;
+            }
+        }
+        
+        /// <summary>
         /// retrieve a widget by id 
         /// </summary>
         /// <param name="id">widget id</param>
-        public void DeleteWidget(string id)
+        public void DeleteWidget(int id)
         {
             try
             {
@@ -163,29 +192,7 @@ namespace Demo_MVVMBasic.BusinessLayer
             }
         }
 
-        public void UpdateWidget(Widget updatedWidget)
-        {
-            try
-            {
-                if (GetWidget(updatedWidget.Name) != null)
-                {
-                    using (WidgetRepository repo = new WidgetRepository())
-                    {
-                        repo.Update(updatedWidget);
-                    }
 
-                    FileIoStatus = FileIoMessage.Complete;
-                }
-                else
-                {
-                    FileIoStatus = FileIoMessage.RecordNotFound;
-                }
-            }
-            catch (Exception)
-            {
-                FileIoStatus = FileIoMessage.FileAccessError;
-            }
-        }
 
     }
 }

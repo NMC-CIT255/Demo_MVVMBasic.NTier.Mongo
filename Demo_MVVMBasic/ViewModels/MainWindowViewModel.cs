@@ -179,7 +179,7 @@ namespace Demo_MVVMBasic
                 {
                     case MessageBoxResult.Yes:
                         // TODO - handle I/O Errors
-                        _widgetBusiness.DeleteWidget(SelectedWidget.Name);
+                        _widgetBusiness.DeleteWidget(SelectedWidget.Id);
 
                         Widgets.Remove(SelectedWidget);
                         WidgetOperationFeedback = "Widget Deleted";

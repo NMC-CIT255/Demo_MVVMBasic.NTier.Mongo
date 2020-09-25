@@ -1,4 +1,5 @@
 ﻿using Demo_MVVMBasic;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace Demo_MVVMBasic.DataAccessLayer
     public interface IDataService
     {
         IEnumerable<Widget> GetAll();
-        Widget GetById(string name);
+        Widget GetById(int id);
         void Add(Widget character);
         void Update(Widget character);
-        void Delete(string name);
+        void Delete(int id);
     }
 }
