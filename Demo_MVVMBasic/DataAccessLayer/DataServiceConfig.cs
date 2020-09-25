@@ -9,9 +9,10 @@ namespace Demo_MVVMBasic.DataAccessLayer
     public class DataServiceConfig
     {
         //
-        // set the type of persistence
+        // TODO (Demo Mode) - set the type of persistence
         //
-        private DataType _dataType = DataType.MONGODB;
+        //private DataType _dataType = DataType.MONGODB;
+        private DataType _dataType = DataType.SQL;
 
         /// <summary>
         /// instantiate and return the correct data service
@@ -23,6 +24,9 @@ namespace Demo_MVVMBasic.DataAccessLayer
             {
                 case DataType.MONGODB:
                     return new DataServiceMongoDb();
+
+                case DataType.SQL:
+                    return new DataServiceSql();
 
                 default:
                     throw new Exception();

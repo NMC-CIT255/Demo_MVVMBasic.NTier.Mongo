@@ -2,6 +2,7 @@
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -15,9 +16,10 @@ namespace Demo_MVVMBasic.BusinessLayer
         public WidgetBusiness()
         {
             //
-            // TODO (Demo Mode) - load seed data to MongoDb cloud
+            // TODO (Demo Mode) - load seed data to database
             //
-            MongoDbUtilities.WriteSeedDataToDatabase();
+            //MongoDbUtilities.WriteSeedDataToDatabase();
+            SqlUtilities.WriteSeedDataToDatabase();
         }
 
         /// <summary>
